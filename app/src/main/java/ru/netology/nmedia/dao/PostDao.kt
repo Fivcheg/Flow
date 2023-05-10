@@ -26,4 +26,7 @@ interface PostDao {
 
     @Query("DELETE FROM PostEntity WHERE id = :id")
     suspend fun removeById(id: Long)
+
+    @Query("SELECT * FROM PostEntity WHERE see = 0 ORDER BY id DESC")
+    suspend fun getAllVisible(): Flow<List<PostEntity>>
 }
