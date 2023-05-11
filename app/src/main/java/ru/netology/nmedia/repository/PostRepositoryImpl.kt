@@ -43,7 +43,6 @@ class PostRepositoryImpl(private val dao: PostDao) : PostRepository {
             if (!response.isSuccessful) {
                 throw ApiError(response.code(), response.message())
             }
-
             val body = response.body() ?: throw ApiError(response.code(), response.message())
             response.body().orEmpty().map{
                 dao.insert(body.toEntity(see = true))

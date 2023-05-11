@@ -18,8 +18,10 @@ import com.google.android.material.snackbar.Snackbar
 import ru.netology.nmedia.R
 import ru.netology.nmedia.adapter.OnInteractionListener
 import ru.netology.nmedia.adapter.PostsAdapter
+import ru.netology.nmedia.dao.PostDao
 import ru.netology.nmedia.databinding.FragmentFeedBinding
 import ru.netology.nmedia.dto.Post
+import ru.netology.nmedia.repository.PostRepository
 import ru.netology.nmedia.viewmodel.PostViewModel
 
 class FeedFragment : Fragment() {
@@ -80,7 +82,6 @@ class FeedFragment : Fragment() {
                 count = 0
                 binding.showNewFab.visibility = GONE
                 binding.list.scrollToPosition(0)
-
             }
         }
 
